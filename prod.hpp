@@ -16,19 +16,19 @@ struct prod_integer_of<T, t> {
 };
 
 template<typename IntSeq>
-struct prod_of {
+struct prod {
     static_assert(always_false<IntSeq>::value, "`IntSeq` must be `ccat::integer_sequence` or `std::integer_sequence`");
 };
 
 template<typename T, T... seq>
-struct prod_of<integer_sequence<T, seq...>> {
+struct prod<integer_sequence<T, seq...>> {
     constexpr static T value = prod_integer_of<T, seq...>::value;
 };
 
 #if defined(__cplusplus) && __cplusplus >= CPP_STD14__ || defined(_MSVC_LANG ) && _MSVC_LANG >= CPP_STD14__
 
 template<typename T, T... seq>
-struct prod_of<std::integer_sequence<T, seq...>> {
+struct prod<std::integer_sequence<T, seq...>> {
     constexpr static T value = prod_integer_of<T, seq...>::value;
 };
 
