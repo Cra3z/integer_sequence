@@ -3,7 +3,7 @@ Implement for `std::integer_sequence` and related algorithms(minimum required c+
 实现了`std::integer_sequence`及相关模板并进行了扩充(要求c++11或更新的c++标准)
 # Examples
 * 直接包含all.hpp这个头文件即可
----
+ 
 * `std::integer_sequence`与`ccat::integer_sequence`之间的转换
 ```c++
 using ccat_seq1 = ccat::integer_sequence<int, 23, 56, -34, 11>;
@@ -15,7 +15,6 @@ using std_seq2 = ccat::to_std_integer_sequence_t<ccat_seq1>; // std::integer_seq
 //使用模板别名`ccat::from_std_integer_sequence_t`将`std::integer_sequence`转换成`ccat::integer_sequence`
 using ccat_seq2 = ccat::from_std_integer_sequence_t<std_seq1>; // ccat::integer_sequence<int, 23, 56, -34, 11>
 ```
----
 * 快速生成integer_sequence
 ```c++
 using seq1 = ccat::make_integer_sequence<int, 10>; // ccat::integer_sequence<int, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9> 
