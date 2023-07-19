@@ -29,11 +29,11 @@ template<typename firstTy, typename secondTy, typename... Types>
 using max_type_of_t = typename max_type_of<firstTy, secondTy, Types...>::type;
 
 template<typename IntSeq>
-struct max_of {
+struct max {
     static_assert(always_false<IntSeq>::value, "`IntSeq` must be `ccat::integer_sequence` or `std::integer_sequence`");
 };
 template<typename T, T... seq>
-struct max_of<integer_sequence<T, seq...>> {
+struct max<integer_sequence<T, seq...>> {
     constexpr static T value = max_integer_of<T, seq...>::value;
 };
 
@@ -46,7 +46,7 @@ template<size_t... seq>
 constexpr size_t max_size_of_v = max_size_of<seq...>::value;
 
 template<typename T, T... seq>
-struct max_of<std::integer_sequence<T, seq...>> {
+struct max<std::integer_sequence<T, seq...>> {
     constexpr static T value = max_integer_of<T, seq...>::value;
 };
 
@@ -83,11 +83,11 @@ using min_type_of_t = typename min_type_of<firstTy, secondTy, Types...>::type;
 
 
 template<typename IntSeq>
-struct min_of {
+struct min {
     static_assert(always_false<IntSeq>::value, "`IntSeq` must be `ccat::integer_sequence` or `std::integer_sequence`");
 };
 template<typename T, T... seq>
-struct min_of<integer_sequence<T, seq...>> {
+struct min<integer_sequence<T, seq...>> {
     constexpr static T value = min_integer_of<T, seq...>::value;
 };
 
@@ -100,7 +100,7 @@ template<size_t... seq>
 constexpr size_t min_size_of_v = min_size_of<seq...>::value;
 
 template<typename T, T... seq>
-struct min_of<std::integer_sequence<T, seq...>> {
+struct min<std::integer_sequence<T, seq...>> {
     constexpr static T value = min_integer_of<T, seq...>::value;
 };
 
