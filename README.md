@@ -7,8 +7,8 @@ Implement for `std::integer_sequence` and related algorithms(minimum required c+
 ```c++
 #include "all.hpp"
 ```
-* `std::integer_sequence`与`ccat::integer_sequence`之间的转换
-* The conversion between `std::integer_sequence` and `ccat::integer_sequence`
+* `std::integer_sequence`与`ccat::integer_sequence`之间的转换(要求c++14或更新的标准, 由于std::integer_sequence是c++14才加入的)
+* The conversion between `std::integer_sequence` and `ccat::integer_sequence`(requires c++14 or newer standard, because std::integer_sequence was added in c++14)
 ```c++
 using ccat_seq1 = ccat::integer_sequence<int, 23, 56, -34, 11>;
 
