@@ -6,3 +6,5 @@
 #include "sum.hpp"
 #include "concat.hpp"
 #include "repeat.hpp"
+#include "remove_from.hpp"
+#include "unique.hpp"
