@@ -70,7 +70,7 @@ using seq = ccat::integer_sequence<int, 12, 345, 4567, 12, 34, 12>;
 using seq1 = ccat::remove_from<int, 12, seq>; //  ccat::integer_sequence<int, 345, 4567, 34>
 // 去掉type_sequence中所有的int
 using ts = ccat::type_sequence<int, char, float, int>;
-using ts1 = ccat::remove_a_type_from_type_sequence<ts>; // ccat::type_sequence<char, float>
+using ts1 = ccat::remove_a_type_from_type_sequence<int, ts>; // ccat::type_sequence<char, float>
 /*去重操作*/
 // 去掉integer_sequence重复的数字
 using seq = ccat::integer_sequence<int, 23, 45, 567, 34, 12, 34, 23, 17, 45>;
