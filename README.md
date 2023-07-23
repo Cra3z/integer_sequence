@@ -62,3 +62,20 @@ using add_result = ccat::add<seq1, seq2>; // ccat::integer_sequence<int, 6, 8, 1
 using subtract_result = ccat::subtract<seq1, seq2>; // ccat::integer_sequence<int, -4, -4, -4, -4>
 using multi_result = ccat::multiply<seq1, seq2>; // ccat::integer_sequence<int, 5, 12, 21, 32>
 ```
+* 其它操作
+```c++
+/*删除操作*/
+// 去掉integer_sequence中所有的12
+using seq = ccat::integer_sequence<int, 12, 345, 4567, 12, 34, 12>;
+using seq1 = ccat::remove_from<int, 12, seq>; //  ccat::integer_sequence<int, 345, 4567, 34>
+// 去掉type_sequence中所有的int
+using ts = ccat::type_sequence<int, char, float, int>;
+using ts1 = ccat::remove_a_type_from_type_sequence<ts>; // ccat::type_sequence<char, float>
+/*去重操作*/
+// 去掉integer_sequence重复的数字
+using seq = ccat::integer_sequence<int, 23, 45, 567, 34, 12, 34, 23, 17, 45>;
+using seq1 = ccat::unique<seq>; // ccat::integer_sequence<int, 23, 45, 567, 34, 12, 17>
+using seq2 = ccat::make_unique_integer_sequence<int, 23, 45, 567, 34, 12, 34, 23, 17, 45>; // same as `seq1` | 与 `seq1`一样
+// 生成无重复类型的type_sequence
+using ts1 = ccat::make_unique_type_sequence<int, char, int, double, float, int, char, long>; // ccat::type_sequence<int, char, double, float, long>
+```
