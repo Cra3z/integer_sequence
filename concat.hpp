@@ -3,9 +3,9 @@
 
 namespace ccat {
 namespace detail {
-template<typename T, T first1, T... seq1, T first2, T... seq2>
-constexpr auto int_seq_cat_helper_fn_(integer_sequence<T, first1, seq1...>, integer_sequence<T, first2, seq2...>) noexcept
-->integer_sequence<T, first1, seq1..., first2, seq2...>;
+template<typename T, T... seq1, T... seq2>
+constexpr auto int_seq_cat_helper_fn_(integer_sequence<T, seq1...>, integer_sequence<T, seq2...>) noexcept
+->integer_sequence<T, seq1..., seq2...>;
 
 template<typename int_seq1, typename int_seq2>
 struct concat_ {
