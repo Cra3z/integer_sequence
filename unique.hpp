@@ -39,7 +39,7 @@ struct unique_intseq_helper_ {
 };
 template<typename T, T... seq>
 struct unique_intseq_helper_<integer_sequence<T, seq...>> {
-    using type = unique_helper_<T, seq...>;
+    using type = typename unique_helper_<T, seq...>::type;
 };
 
 }
