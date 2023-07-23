@@ -48,7 +48,7 @@ struct remove_from_type_sequence_<T, type_sequence<U, Types...>> {
 template<typename T, typename... Types>
 using remove_from_types = typename remove_from_types_impl_<T, Types...>::type;
 template<typename T, typename TySeq>
-using remove_from_type_sequence_t = typename remove_from_types_impl_<T, TySeq>::type;
+using remove_from_type_sequence_t = typename remove_from_type_sequence_<T, TySeq>::type;
 
 template<typename T, typename... Types>
 struct tyseq_unique;
