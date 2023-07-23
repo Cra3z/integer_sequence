@@ -33,8 +33,8 @@ using seq2 = ccat::repeat<12, int, 1>; // ccat::integer_sequence<int, 1, 1, 1, 1
 * Get the sum and product of integer_sequence
 ```c++
 using seq = ccat::integer_sequence<int, 1, 2, 3, 4>;
-constexpr int sum = ccat::sum<seq1>; // 1+2+3+4=10
-constexpr int prod = ccat::prod<seq1>; // 1x2x3x4=24
+constexpr int sum = ccat::sum<seq>; // 1+2+3+4=10
+constexpr int prod = ccat::prod<seq>; // 1x2x3x4=24
 ```
 * 获取最值
 * Maximum and Minimum
