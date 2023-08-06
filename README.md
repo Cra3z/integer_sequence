@@ -53,7 +53,7 @@ using m_t = ccat::min_type_of_t<int, char, std::string>; // `char`
 using M_t = ccat::max_type_of_t<int, char, std::string>; // `std::string`
 ```
 * 运算: 目前仅支持integer_sequence的合并, 对应相乘, 对应相加, 对应相减
-* Operations: Currently only supports integer_sequence merging, corresponding multiplication, corresponding addition, corresponding subtraction
+* Operations: Currently only supports integer_sequence merging, corresponding multiplication, corresponding addition and corresponding subtraction
 ```c++
 using seq1 = ccat::integer_sequence<int, 1, 2, 3, 4>;
 using seq2 = ccat::integer_sequence<int, 5, 6, 7, 8>;
