@@ -1,5 +1,5 @@
 # Integer_sequence
-Implement for `std::integer_sequence` and related meta-programming algorithms(minimum required c++ standard: C++11)
+Implement for `std::integer_sequence` and related meta-programming algorithms(minimum required c++ standard: C++11)  
 实现了`std::integer_sequence`及相关元编程算法(要求c++11或更新的c++标准)
 # Examples
 * 直接包含`all.hpp`这个头文件即可
